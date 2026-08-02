@@ -1,8 +1,18 @@
+import "./styles/App.css";
+
+import Header from "./components/Header";
+import ProjectForm from "./components/ProjectForm";
+import SearchBar from "./components/SearchBar";
+import ProjectList from "./components/ProjectList";
+
 function App() {
   return (
-    <>
-      <h1>Personal Project Showcase App</h1>
-    </>
+    <div className="app">
+      <Header />
+      <ProjectForm />
+      <SearchBar />
+      <ProjectList />
+    </div>
   );
 }
 
