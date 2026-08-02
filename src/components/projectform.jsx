@@ -1,17 +1,45 @@
+import { useState } from "react";
+
 function ProjectForm() {
+
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    console.log("Title:", title);
+    console.log("Description:", description);
+  }
+
   return (
     <section>
       <h2>Add Project</h2>
 
-      <label>Title</label>
+      <form onSubmit={handleSubmit}>
 
-      <input type="text" />
+        <label htmlFor="title">Title</label>
 
-      <label>Description</label>
+        <input
+          id="title"
+          type="text"
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+        />
 
-      <textarea></textarea>
+        <label htmlFor="description">Description</label>
 
-      <button>Add</button>
+        <textarea
+          id="description"
+          value={description}
+          onChange={(event) => setDescription(event.target.value)}
+        ></textarea>
+
+        <button type="submit">
+          Add Project
+        </button>
+
+      </form>
     </section>
   );
 }
