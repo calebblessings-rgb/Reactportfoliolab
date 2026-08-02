@@ -1,9 +1,9 @@
-function ProjectCard() {
+function ProjectCard({ title, description }) {
   return (
     <div>
-      <h3>Project 1</h3>
+      <h3>{title}</h3>
 
-      <p>Description of the project.</p>
+      <p>{description}</p>
     </div>
   );
 }

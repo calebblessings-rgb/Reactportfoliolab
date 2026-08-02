@@ -1,11 +1,15 @@
-import ProjectCard from './projectcard';
+import ProjectCard from "./projectcard";
 
-function ProjectList() {
+function ProjectList({ projects }) {
   return (
     <section>
-      <ProjectCard />
-      <ProjectCard />
-      <ProjectCard />
+      {projects.map((project) => (
+        <ProjectCard
+          key={project.id}
+          title={project.title}
+          description={project.description}
+        />
+      ))}
     </section>
   );
 }
