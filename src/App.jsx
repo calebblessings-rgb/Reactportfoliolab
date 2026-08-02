@@ -1,5 +1,6 @@
-import "./styles/App.css";
 import { useState } from "react";
+
+import "./styles/App.css";
 
 import Header from "./components/header";
 import ProjectForm from "./components/projectform";
@@ -26,15 +27,26 @@ function App() {
     }
   ]);
 
+  function addProject(newProject) {
+
+    setProjects([
+      ...projects,
+      newProject
+    ]);
+
+  }
+
   return (
     <div className="app">
+
       <Header />
 
-      <ProjectForm />
+      <ProjectForm addProject={addProject} />
 
       <SearchBar />
 
       <ProjectList projects={projects} />
+
     </div>
   );
 }
