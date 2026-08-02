@@ -1,11 +1,10 @@
 import { useState } from "react";
-
 import "./styles/App.css";
 
-import Header from "./components/header";
-import ProjectForm from "./components/projectform";
-import SearchBar from "./components/searchbar";
-import ProjectList from "./components/projectlist";
+import Header from "./components/Header";
+import ProjectForm from "./components/ProjectForm";
+import SearchBar from "./components/SearchBar";
+import ProjectList from "./components/ProjectList";
 
 function App() {
 
@@ -27,6 +26,8 @@ function App() {
     }
   ]);
 
+  const [searchTerm, setSearchTerm] = useState("");
+
   function addProject(newProject) {
 
     setProjects([
@@ -36,6 +37,10 @@ function App() {
 
   }
 
+  const filteredProjects = projects.filter((project) =>
+    project.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <div className="app">
 
@@ -43,9 +48,12 @@ function App() {
 
       <ProjectForm addProject={addProject} />
 
-      <SearchBar />
+      <SearchBar
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
 
-      <ProjectList projects={projects} />
+      <ProjectList projects={filteredProjects} />
 
     </div>
   );
