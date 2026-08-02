@@ -1,10 +1,10 @@
 import { useState } from "react";
 import "./styles/App.css";
 
-import Header from "./components/Header";
-import ProjectForm from "./components/ProjectForm";
-import SearchBar from "./components/SearchBar";
-import ProjectList from "./components/ProjectList";
+import Header from "./components/header";
+import ProjectForm from "./components/projectform";
+import SearchBar from "./components/searchbar";
+import ProjectList from "./components/projectlist";
 
 function App() {
 
